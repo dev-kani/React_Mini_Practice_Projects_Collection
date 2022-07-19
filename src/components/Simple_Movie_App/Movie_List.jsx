@@ -10,10 +10,13 @@ const Movie_List = props => {
                     <img src={movie.Poster} alt="movies" />
                     <div
                         className="overlay"
-                        onClick={() => props.handleFavouritesClick(movie)}
+                    // onClick={() => props.handleFavouritesClick(movie)}
                     >
-                        <FavouriteComponent />
+                        {/* <FavouriteComponent /> */}
                     </div>
+                    <p className="movie-title">{movie.Title}</p>
+                    <p className="movie-title">({movie.Year})</p>
+
                 </div>
             ))}
         </>

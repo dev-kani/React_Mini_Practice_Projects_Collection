@@ -8,7 +8,7 @@ import Add_Favourites from './Add_Favourites';
 
 const Simple_Movie_App = () => {
     const [movies, setMovies] = useState([]);
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('Avatar');
     const [favourites, setFavourites] = useState('');
 
     const getMovieRequest = async (searchValue) => {
@@ -34,14 +34,14 @@ const Simple_Movie_App = () => {
 
     return (
         <>
-            <div>
-                <Movie_Heading title="Movies" />
+            <div className="movies-navbar">
+                <Movie_Heading title="Search Movies" />
                 <Movie_Search
                     searchValue={searchValue}
                     setSearchValue={setSearchValue}
                 />
             </div>
-            <div>
+            <div className="movie-container">
                 <Movie_List
                     movies={movies}
                     handleFavouritesClick={addFavouriteMovie}
@@ -49,11 +49,11 @@ const Simple_Movie_App = () => {
                 />
             </div>
 
-            {/* <div>
-                <Movie_Heading title="Favourites" />
+            <div>
+                {/* <Movie_Heading title="Favourites" /> */}
 
             </div>
-            <div>
+            {/* <div>
                 <Movie_List
                     movies={favourites}
                     handleFavouritesClick={addFavouriteMovie}
