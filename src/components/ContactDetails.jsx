@@ -1,9 +1,9 @@
-import Contact_Card from "./Contact_Card_Project/Contact_Card";
+import ContactCard from "./ContactCardProject/ContactCard";
 
-const Contact_Details = () => {
+const ContactDetails = () => {
   const contacts = [
     {
-      img:  "/images/bill_gates.jpg",
+      img: "/images/bill_gates.jpg",
       name: "Bill Gates",
       email: "bill.gates@microsoft.com",
       age: 66
@@ -36,23 +36,24 @@ const Contact_Details = () => {
     <div>
       {contacts.map((contact, index) => {
         return (
-        // <Contact_Card
-        //   key={index}
-        //   img={result.picture.large}
-        //   name={result.name.first}
-        //   email={result.email}
-        //   age={result.dob.age}
-        // />
-        <Contact_Card
-          key={index}
-          img={process.env.PUBLIC_URL + contact.img}
-          name={contact.name}
-          email={contact.email}
-          age={contact.age}
-        />
-      )})}
+          // <Contact_Card
+          //   key={index}
+          //   img={result.picture.large}
+          //   name={result.name.first}
+          //   email={result.email}
+          //   age={result.dob.age}
+          // />
+          <ContactCard
+            key={index}
+            img={process.env.PUBLIC_URL + contact.img}
+            name={contact.name}
+            email={contact.email}
+            age={contact.age}
+          />
+        )
+      })}
     </div>
   );
 }
 
-export default Contact_Details;
+export default ContactDetails;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Temperature_Controller = () => {
+const TemperatureController = () => {
   const [temperatureValue, setTemperatureValue] = useState(12);
   const [tempColor, setTempColor] = useState()
 
@@ -8,19 +8,18 @@ const Temperature_Controller = () => {
     if (temperatureValue === 25) return;
     setTemperatureValue(temperatureValue + 1)
     const newTemp = temperatureValue + 1;
-    if (newTemp >= 15 ) {
+    if (newTemp >= 15) {
       setTempColor("hot")
-    } 
+    }
   }
 
   const decreaseTemp = () => {
     if (temperatureValue === -5) return;
     setTemperatureValue(temperatureValue - 1)
-    if (temperatureValue < 10 ) {
+    if (temperatureValue < 10) {
       setTempColor("cold")
-    } 
+    }
   }
-
 
   return (
     <div className="app-container">
@@ -30,11 +29,11 @@ const Temperature_Controller = () => {
         </div>
       </div>
       <div className="button-container">
-          <button onClick={() => increaseTemp()}>+</button>
-          <button onClick={decreaseTemp}>-</button>
-        </div>
+        <button onClick={() => increaseTemp()}>+</button>
+        <button onClick={decreaseTemp}>-</button>
+      </div>
     </div>
   );
 }
 
-export default Temperature_Controller;
+export default TemperatureController;

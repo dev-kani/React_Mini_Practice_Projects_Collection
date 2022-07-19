@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const Basic_Form = () => {
-    const [form_values, setform_values] = useState({
+const BasicForm = () => {
+    const [formValues, setFormValues] = useState({
         firstName: "",
         lastName: "",
         email: ""
@@ -11,21 +11,21 @@ const Basic_Form = () => {
     const [form_valid, setForm_valid] = useState(false)
 
     const handleFirstName = (e) => {
-        setform_values({ ...form_values, firstName: e.target.value })
+        setFormValues({ ...formValues, firstName: e.target.value })
     }
 
     const handleLastName = (e) => {
-        setform_values({ ...form_values, lastName: e.target.value })
+        setFormValues({ ...formValues, lastName: e.target.value })
     }
 
     const handleEmail = (e) => {
-        setform_values({ ...form_values, email: e.target.value })
+        setFormValues({ ...formValues, email: e.target.value })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitted(true);
-        if (form_values.firstName && form_values.lastName && form_values.email) {
+        if (formValues.firstName && formValues.lastName && formValues.email) {
             setForm_valid(true)
         }
     }
@@ -36,31 +36,31 @@ const Basic_Form = () => {
                 {submitted && form_valid ? <p className="success-message">Registration Successful!</p> : null}
                 <input
                     onChange={handleFirstName}
-                    value={form_values.firstName}
+                    value={formValues.firstName}
                     type="text"
                     className="form-field"
                     placeholder="First Name"
                     name="firstName"
                 />
-                {submitted && !form_values.firstName ? <span>First name is required</span> : null}
+                {submitted && !formValues.firstName ? <span>First name is required</span> : null}
                 <input
                     onChange={handleLastName}
-                    value={form_values.lastName}
+                    value={formValues.lastName}
                     type="text"
                     className="form-field"
                     placeholder="Last Name"
                     name="lastName"
                 />
-                {submitted && !form_values.lastName ? <span>Last name is required</span> : null}
+                {submitted && !formValues.lastName ? <span>Last name is required</span> : null}
                 <input
                     onChange={handleEmail}
-                    value={form_values.email}
+                    value={formValues.email}
                     type="email"
                     className="form-field"
                     placeholder="Email"
                     name="email"
                 />
-                {submitted && !form_values.email ? <span>Email is required</span> : null}
+                {submitted && !formValues.email ? <span>Email is required</span> : null}
                 <button
                     className="form-field"
                     type="submit"
@@ -71,4 +71,4 @@ const Basic_Form = () => {
     );
 };
 
-export default Basic_Form;
+export default BasicForm;
